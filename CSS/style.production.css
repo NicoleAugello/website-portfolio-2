@@ -1,0 +1,497 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/*
+Colors used
+Text Color (Dark Purple): #16063A;
+Primary Color (Purple): #432f75;
+Secondary Color (Light Purple): #8a7baf;
+
+Logo purple HEX:#5a16e9
+
+*/
+
+/* Task 8
+2. Replace all your colors with native CSS color variables.
+3. Replace any other repetitive values (e.g., font-weight, font-size, etc.) as variables, as well.
+
+*/
+
+/*
+ Pick at least one font from Google Fonts. - Goldman
+Define font sizes and line heights for default text elements (body, headers, etc.).
+*/
+
+body {
+  font-family: 'Goldman', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 2;
+}
+
+/* Create link stylings with different stylings for normal, hover, active, and visited states */
+a {
+  color: #432f75;
+}
+
+a:visited {
+  /* visited link Light */
+  color: #8a7baf;
+}
+
+a:hover {
+  /* No underlining when hovering over a link */
+  text-decoration: none;
+}
+
+a:active {
+  /* selected link */
+  color: #489c79;
+}
+
+/*
+Include at least one button somewhere on your page and give it stylings for normal and hover states
+(e.g., decrease its opacity and have the mouse turn into a hand pointer on hover).
+*/
+
+.button-task {
+  display: inline-block;
+  background-color: #432f75;
+  color: #fff;
+  font-family: inherit;
+  border-color: #8a7baf;
+  padding: 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  -webkit-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.button {
+  display: inline-block;
+  background-color: #432f75;
+  color: #fff;
+  font-family: inherit;
+  border-color: #8a7baf;
+  padding: 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  -webkit-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+button.button-task:hover,
+button.button-task:focus,
+.button:hover,
+.button:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* Task 6 CSS */
+
+.logo {
+  width: 200px;
+  height: auto;
+  margin: 10px;
+}
+
+/* Set the box-sizing to border-box on all your elements. */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Create a Flexbox layout for your header bar */
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-right: 10px;
+  min-width: 375px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin: 5px;
+}
+
+li a:hover {
+  font-size: 150%;
+}
+
+/* Align your profile image and your welcome text */
+
+.welcome {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 50px;
+}
+
+.welcome_img {
+  margin-right: 20px;
+  max-width: 300px;
+  border-radius: 50%;
+}
+
+.welcome_content {
+  max-width: 500px;
+}
+
+/* Grid */
+
+.grid__item {
+  background-color: #5916e93a;
+  padding: 20px;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 300px 20px 300px;
+  grid-template-rows: 300px 300px;
+  grid-gap: 20px;
+}
+
+.grid > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+
+.grid > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+
+.grid > *:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+}
+
+.grid > *:nth-child(4) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+
+.grid > *:nth-child(5) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+}
+
+.grid > *:nth-child(6) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 5;
+}
+
+.grid__item:last-child {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  -ms-grid-column-span: 0;
+  grid-column-end: 3;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  -ms-grid-row-span: 2;
+  grid-row-end: 3;
+}
+
+/* Footer */
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* Task 7
+
+1. Add a @media query for smaller screen sizes.
+• Adjust your 4-column grid to a 2-column or 1-column grid.
+• Make the heading 1 smaller.
+• Experiment with different screen sizes to make sure your pages are responsive.
+
+*/
+
+@media all and (max-width: 650px) {
+  .grid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+}
+
+@media all and (min-width: 650px) and (max-width: 980px) {
+  .grid {
+    -ms-grid-columns: 1fr 20px 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid__item:last-child {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: 4 / 1 / 5 / 3;
+  }
+}
+
+@media all and (max-width: 980px) {
+  .grid {
+    grid-gap: 10px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+}
+
+/*
+
+2. Select one page of your website for more advanced CSS styling (e.g., the about page).
+
+3. Add CSS transitions to your selected page.
+• Add a transition to your buttons.
+• Bonus: Add transitions to your links.
+Bonus: Spotlight on AI: Check out the “Bonus: Spotlight on AI” section for instructions about how you can use AI tools to help you with your CSS code for this step.
+
+*/
+
+/* About page - button (see li a:hover) */
+
+.button {
+  -webkit-transition-duration: 0.2s;
+       -o-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+}
+
+/*
+
+4. Add an illustration to your page and animate it.
+• Bonus: Pick an SVG illustration of your choice. Revisit the “Tip! Finding an SVG” section of the Exercise for help with this step.
+• Add one animation to the illustration with CSS.
+• Bonus: Add multiple animations with rotate, scale, translate, etc.
+
+*/
+
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.about-section {
+  max-width: 70%;
+  background-color: #8a7baf;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+  border-radius: 10%;
+}
+
+.about-section-list {
+  padding: 0;
+  text-align: center;
+}
+
+/* Animation sun */
+
+#about-picture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0% 20%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.about-picture-toronto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0% 10%;
+}
+
+.sun {
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-name: color-change;
+          animation-name: color-change;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes color-change {
+  0% {
+    fill: #edc655;
+  }
+
+  50% {
+    fill: #fcffad;
+  }
+
+  100% {
+    fill: #f76414;
+  }
+}
+
+@keyframes color-change {
+  0% {
+    fill: #edc655;
+  }
+
+  50% {
+    fill: #fcffad;
+  }
+
+  100% {
+    fill: #f76414;
+  }
+}
+
+/* Animation cloud */
+
+.cloud-front {
+  -webkit-animation-duration: 30s;
+          animation-duration: 30s;
+  -webkit-animation-name: cloud-move;
+          animation-name: cloud-move;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes cloud-move {
+  from {
+    -webkit-transform: translate(0, 50px);
+            transform: translate(0, 50px);
+  }
+
+  to {
+    -webkit-transform: translate(200px, 50px);
+            transform: translate(200px, 50px);
+  }
+}
+
+@keyframes cloud-move {
+  from {
+    -webkit-transform: translate(0, 50px);
+            transform: translate(0, 50px);
+  }
+
+  to {
+    -webkit-transform: translate(200px, 50px);
+            transform: translate(200px, 50px);
+  }
+}
+
+@keyframes cloud-move {
+  from {
+    -webkit-transform: translate(0, 50px);
+            transform: translate(0, 50px);
+  }
+
+  to {
+    -webkit-transform: translate(200px, 50px);
+            transform: translate(200px, 50px);
+  }
+}

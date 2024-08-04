@@ -1,0 +1,340 @@
+/*
+Colors used
+Text Color (Dark Purple): #16063A;
+Primary Color (Purple): #432f75;
+Secondary Color (Light Purple): #8a7baf;
+
+Logo purple HEX:#5a16e9
+
+*/
+
+/* Task 8
+2. Replace all your colors with native CSS color variables.
+3. Replace any other repetitive values (e.g., font-weight, font-size, etc.) as variables, as well.
+
+*/
+
+:root {
+  --primary-color: #432f75;
+  --secondary-color: #8a7baf;
+  --active-link: #489c79;
+  --button-text: #fff;
+  --grid-bg: #5916e93a;
+  --color-change-0: #edc655;
+  --color-change-50: #fcffad;
+  --color-change-100: #f76414;
+  --h1-font-size: 30px;
+}
+
+/*
+ Pick at least one font from Google Fonts. - Goldman
+Define font sizes and line heights for default text elements (body, headers, etc.).
+*/
+
+body {
+  font-family: 'Goldman', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+  font-weight: 700;
+  line-height: 2;
+}
+
+/* Create link stylings with different stylings for normal, hover, active, and visited states */
+a {
+  color: var(--primary-color);
+}
+
+a:visited {
+  /* visited link Light */
+  color: var(--secondary-color);
+}
+
+a:hover {
+  /* No underlining when hovering over a link */
+  text-decoration: none;
+}
+
+a:active {
+  /* selected link */
+  color: var(--active-link);
+}
+
+/*
+Include at least one button somewhere on your page and give it stylings for normal and hover states
+(e.g., decrease its opacity and have the mouse turn into a hand pointer on hover).
+*/
+
+.button-task,
+.button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--button-text);
+  font-family: inherit;
+  border-color: var(--secondary-color);
+  padding: 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: opacity 0.2s;
+}
+
+button.button-task:hover,
+button.button-task:focus,
+.button:hover,
+.button:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* Task 6 CSS */
+
+.logo {
+  width: 200px;
+  height: auto;
+  margin: 10px;
+}
+
+/* Set the box-sizing to border-box on all your elements. */
+* {
+  box-sizing: border-box;
+}
+
+/* Create a Flexbox layout for your header bar */
+header {
+  display: flex;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+  margin-right: 10px;
+  min-width: 375px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin: 5px;
+}
+
+li a:hover {
+  font-size: 150%;
+}
+
+/* Align your profile image and your welcome text */
+
+.welcome {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+.welcome_img {
+  margin-right: 20px;
+  max-width: 300px;
+  border-radius: 50%;
+}
+
+.welcome_content {
+  max-width: 500px;
+}
+
+/* Grid */
+
+.grid__item {
+  background-color: var(--grid-bg);
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 300px 300px;
+  grid-gap: 20px;
+}
+
+.grid__item:last-child {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Task 7
+
+1. Add a @media query for smaller screen sizes.
+• Adjust your 4-column grid to a 2-column or 1-column grid.
+• Make the heading 1 smaller.
+• Experiment with different screen sizes to make sure your pages are responsive.
+
+*/
+
+@media all and (max-width: 650px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+}
+
+@media all and (min-width: 650px) and (max-width: 980px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid__item:last-child {
+    grid-area: 4 / 1 / 5 / 3;
+  }
+}
+
+@media all and (max-width: 980px) {
+  .grid {
+    grid-gap: 10px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+}
+
+/*
+
+2. Select one page of your website for more advanced CSS styling (e.g., the about page).
+
+3. Add CSS transitions to your selected page.
+• Add a transition to your buttons.
+• Bonus: Add transitions to your links.
+Bonus: Spotlight on AI: Check out the “Bonus: Spotlight on AI” section for instructions about how you can use AI tools to help you with your CSS code for this step.
+
+*/
+
+/* About page - button (see li a:hover) */
+
+.button {
+  transition-duration: 0.2s;
+  transition-property: opacity;
+}
+
+/*
+
+4. Add an illustration to your page and animate it.
+• Bonus: Pick an SVG illustration of your choice. Revisit the “Tip! Finding an SVG” section of the Exercise for help with this step.
+• Add one animation to the illustration with CSS.
+• Bonus: Add multiple animations with rotate, scale, translate, etc.
+
+*/
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-section {
+  max-width: 70%;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10%;
+}
+
+.about-section-list {
+  padding: 0;
+  text-align: center;
+}
+
+/* Animation sun */
+
+#about-picture {
+  display: flex;
+  flex-direction: row;
+  margin: 0% 20%;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-picture-toronto {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0% 10%;
+}
+
+.sun {
+  animation-duration: 4s;
+  animation-name: color-change;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+@keyframes color-change {
+  0% {
+    fill: var(--color-change-0);
+  }
+
+  50% {
+    fill: var(--color-change-50);
+  }
+
+  100% {
+    fill: var(--color-change-100);
+  }
+}
+
+/* Animation cloud */
+
+.cloud-front {
+  animation-duration: 30s;
+  animation-name: cloud-move;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 50px);
+  }
+
+  to {
+    transform: translate(200px, 50px);
+  }
+}
+
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 50px);
+  }
+
+  to {
+    transform: translate(200px, 50px);
+  }
+}
+
